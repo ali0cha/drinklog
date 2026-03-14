@@ -135,19 +135,6 @@ drinklog/
     └── PHPMailer/        # ← à créer manuellement ou via Composer (non fourni)
 ```
 
-## Migrating existing data
-
-If you had a previous version without the ethanol density correction, run:
-
-```sql
--- Backup first
-CREATE TABLE drink_log_backup AS SELECT * FROM drink_log;
-
--- Recalculate
-UPDATE drink_log
-SET units = (volume_ml * (degree / 100) * 0.789) / 10
-WHERE is_dry_day = 0;
-```
 
 ## License
 
