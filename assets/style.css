@@ -1,0 +1,332 @@
+/* ============================================================
+   DrinkLog – Custom Styles
+   Mobile-first, Bootstrap 5 dark/light mode
+   ============================================================ */
+
+:root {
+    --dl-primary:       #7c3aed;
+    --dl-primary-light: #8b5cf6;
+    --dl-radius:        14px;
+    --dl-shadow:        0 2px 12px rgba(0,0,0,.08);
+    --dl-shadow-dark:   0 2px 12px rgba(0,0,0,.35);
+    --dl-dry:           #16a34a;
+    --dl-ok:            #d97706;
+    --dl-over:          #dc2626;
+    --dl-bottom-height: 64px;
+}
+
+/* ---- Base ---- */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ---- Navbar ---- */
+.dl-navbar {
+    background: var(--dl-primary) !important;
+}
+.dl-navbar .navbar-brand,
+.dl-navbar .nav-link,
+.dl-navbar .navbar-toggler {
+    color: #fff !important;
+}
+.dl-navbar .btn {
+    color: #fff !important;
+    border-color: rgba(255,255,255,.5) !important;
+}
+.dl-navbar .btn:hover {
+    background: rgba(255,255,255,.15) !important;
+    border-color: #fff !important;
+}
+.dl-navbar .btn.btn-primary {
+    background: rgba(255,255,255,.25) !important;
+    border-color: #fff !important;
+}
+.dl-navbar .btn-outline-danger {
+    border-color: rgba(255,200,200,.6) !important;
+}
+.dl-navbar .btn-outline-danger:hover {
+    background: rgba(255,80,80,.3) !important;
+}
+[data-bs-theme=dark] .dl-navbar {
+    background: #3b1d8a !important;
+}
+
+/* ---- Cards ---- */
+.dl-card {
+    border-radius: var(--dl-radius);
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: var(--dl-shadow);
+    transition: box-shadow .2s;
+}
+[data-bs-theme=dark] .dl-card {
+    border-color: rgba(255,255,255,.08);
+    box-shadow: var(--dl-shadow-dark);
+}
+
+/* ---- Stat numbers ---- */
+.dl-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: .25rem;
+}
+
+/* ---- Dry Day button ---- */
+.dl-dry-btn {
+    border-radius: var(--dl-radius);
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    border: none;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(22,163,74,.35);
+    transition: transform .1s, box-shadow .1s;
+}
+.dl-dry-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(22,163,74,.45);
+    color: #fff;
+}
+.dl-dry-btn:active { transform: translateY(0); }
+
+/* ---- Auth pages ---- */
+.dl-auth-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.dl-auth-container {
+    width: 100%;
+    max-width: 420px;
+    background: var(--bs-body-bg);
+    border-radius: calc(var(--dl-radius) * 1.5);
+    padding: 2rem 1.75rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,.12);
+}
+[data-bs-theme=dark] .dl-auth-container {
+    box-shadow: 0 8px 32px rgba(0,0,0,.4);
+}
+
+.dl-app-icon {
+    width: 72px; height: 72px;
+    background: linear-gradient(135deg, var(--dl-primary), var(--dl-primary-light));
+    border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(124,58,237,.4);
+}
+
+/* ---- Bottom navigation (mobile) ---- */
+.dl-bottom-nav {
+    height: var(--dl-bottom-height);
+    background: var(--bs-body-bg);
+    border-top: 1px solid rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 .5rem;
+    box-shadow: 0 -2px 12px rgba(0,0,0,.08);
+    z-index: 1030;
+}
+[data-bs-theme=dark] .dl-bottom-nav {
+    border-color: rgba(255,255,255,.1);
+}
+
+.dl-bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-decoration: none;
+    color: var(--bs-secondary-color);
+    font-size: .65rem;
+    padding: .4rem .8rem;
+    border-radius: 12px;
+    transition: color .15s, background .15s;
+    flex: 1;
+}
+.dl-bottom-nav-item i { font-size: 1.35rem; }
+.dl-bottom-nav-item.active {
+    color: var(--dl-primary);
+    background: rgba(124,58,237,.08);
+}
+.dl-bottom-nav-item:hover { color: var(--dl-primary); }
+
+/* ---- Calendar ---- */
+.dl-calendar {
+    width: 100%;
+    user-select: none;
+}
+.dl-cal-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr) 52px;
+    gap: 2px;
+    margin-bottom: 4px;
+}
+.dl-cal-dh, .dl-cal-wh {
+    text-align: center;
+    font-size: .7rem;
+    font-weight: 700;
+    color: var(--bs-secondary-color);
+    padding: 4px 2px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+.dl-cal-wh { color: var(--dl-primary); }
+
+.dl-cal-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr) 52px;
+    gap: 2px;
+    margin-bottom: 2px;
+}
+
+.dl-cal-cell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    font-size: .75rem;
+    position: relative;
+    transition: filter .1s, transform .1s;
+    background: var(--bs-body-bg);
+    border: 1px solid transparent;
+    min-height: 44px;
+    gap: 2px;
+}
+.dl-cal-cell:hover { filter: brightness(.92); transform: scale(1.04); color: inherit; }
+.dl-cal-cell:active { transform: scale(.97); }
+
+.dl-cal-day-num { font-weight: 700; font-size: .8rem; line-height: 1; }
+.dl-cal-badge {
+    font-size: .6rem;
+    font-weight: 600;
+    opacity: .9;
+    white-space: nowrap;
+}
+
+/* Day states */
+.dl-cal-other { opacity: .3; pointer-events: none; }
+
+.dl-cal-dry {
+    background: rgba(22,163,74,.15);
+    border-color: rgba(22,163,74,.3);
+    color: var(--dl-dry);
+}
+[data-bs-theme=dark] .dl-cal-dry {
+    background: rgba(22,163,74,.25);
+}
+
+.dl-cal-ok {
+    background: rgba(217,119,6,.13);
+    border-color: rgba(217,119,6,.3);
+    color: #92400e;
+}
+[data-bs-theme=dark] .dl-cal-ok {
+    background: rgba(217,119,6,.22);
+    color: #fbbf24;
+}
+
+.dl-cal-over {
+    background: rgba(220,38,38,.13);
+    border-color: rgba(220,38,38,.3);
+    color: var(--dl-over);
+}
+[data-bs-theme=dark] .dl-cal-over {
+    background: rgba(220,38,38,.22);
+}
+
+.dl-cal-today {
+    outline: 2.5px solid var(--dl-primary);
+    outline-offset: 1px;
+}
+
+/* Weekly total cell */
+.dl-cal-week {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: .72rem;
+    background: rgba(124,58,237,.06);
+    border-radius: 10px;
+    padding: 2px;
+    min-height: 44px;
+}
+.dl-cal-week-label { font-size: .55rem; color: var(--bs-secondary-color); }
+
+/* ---- Legend pills ---- */
+.dl-legend {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: .72rem;
+    font-weight: 600;
+}
+.dl-legend-dry   { background: rgba(22,163,74,.15);  color: var(--dl-dry); }
+.dl-legend-ok    { background: rgba(217,119,6,.15);  color: #92400e; }
+.dl-legend-over  { background: rgba(220,38,38,.15);  color: var(--dl-over); }
+.dl-legend-empty { background: var(--bs-secondary-bg); color: var(--bs-secondary-color); }
+
+[data-bs-theme=dark] .dl-legend-ok { color: #fbbf24; }
+
+/* ---- Inputs & selects ---- */
+.form-select-lg, .form-control-lg {
+    border-radius: 10px !important;
+}
+.input-group > .input-group-text { border-radius: 10px 0 0 10px !important; }
+.input-group > .form-control:last-child,
+.input-group > .form-select:last-child { border-radius: 0 10px 10px 0 !important; }
+.input-group > .btn:last-child { border-radius: 0 10px 10px 0 !important; }
+
+/* ---- Buttons ---- */
+.btn-primary {
+    background: var(--dl-primary) !important;
+    border-color: var(--dl-primary) !important;
+}
+.btn-primary:hover { background: #6d28d9 !important; border-color: #6d28d9 !important; }
+.btn-outline-primary { color: var(--dl-primary) !important; border-color: var(--dl-primary) !important; }
+.btn { border-radius: 10px; }
+
+/* ---- Progress ---- */
+.progress { border-radius: 99px; }
+
+/* ---- Spacing for bottom nav ---- */
+@media (max-width: 767px) {
+    main { padding-bottom: calc(var(--dl-bottom-height) + 1rem) !important; }
+}
+
+/* ---- PWA safe area ---- */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .dl-bottom-nav {
+        padding-bottom: env(safe-area-inset-bottom);
+        height: calc(var(--dl-bottom-height) + env(safe-area-inset-bottom));
+    }
+}
+
+/* ---- Responsive calendar font ---- */
+@media (max-width: 360px) {
+    .dl-cal-cell { font-size: .65rem; }
+    .dl-cal-day-num { font-size: .7rem; }
+}
+@media (min-width: 480px) {
+    .dl-cal-cell { font-size: .82rem; }
+    .dl-cal-day-num { font-size: .9rem; }
+    .dl-cal-badge { font-size: .68rem; }
+}
+
+/* ---- Nav pills (auth) ---- */
+.nav-pills .nav-link.active {
+    background: var(--dl-primary) !important;
+}
+
+/* ---- fs-7 utility ---- */
+.fs-7 { font-size: .8rem; }

@@ -1,0 +1,39 @@
+{
+  "name": "DrinkLog",
+  "short_name": "DrinkLog",
+  "description": "Suivi de consommation d'alcool avec normes OMS",
+  "start_url": "dashboard.php",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#7c3aed",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["health", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Encoder",
+      "url": "dashboard.php",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Calendrier",
+      "url": "calendar.php",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
